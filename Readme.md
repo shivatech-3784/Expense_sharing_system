@@ -1,6 +1,6 @@
-##Expense Sharing Application (Splitwise-like Backend)
+# Expense Sharing Application (Splitwise-like Backend)
 
-##Overview
+## Overview
 
 This project is a backend system for an expense sharing application similar to Splitwise.
 It allows users to create groups, add shared expenses with multiple split strategies, track balances, and settle dues.
@@ -8,7 +8,7 @@ It allows users to create groups, add shared expenses with multiple split strate
 The focus of this project is business logic, data modeling, and balance simplification, not authentication or frontend UI.
 
 
-##Features Implemented
+## Features Implemented
 
 Create users (minimal, no authentication)
 
@@ -31,7 +31,7 @@ Balance simplification (netting dues)
 Settle dues (partial & full settlements)
 
 
-Tech Stack
+## Tech Stack
 
 Node.js
 
@@ -42,7 +42,7 @@ MongoDB
 Mongoose
 
 
-System Design (High Level)
+## System Design (High Level)
 
 Core Entities
 
@@ -62,7 +62,7 @@ Balance
 
 Tracks who owes whom and how much (simplified)
 
-Important Design Decision
+## Important Design Decision
 
 Expenses store intent
 
@@ -75,39 +75,7 @@ Actual money owed between users
 This separation keeps the system flexible and correct.
 
 
-System Design (High Level)
-Core Entities
-
-User
-
-Represents a participant in expenses
-
-Group
-
-Collection of users sharing expenses
-
-Expense
-
-Records how an expense was split (equal / exact / percent)
-
-Balance
-
-Tracks who owes whom and how much (simplified)
-
-Important Design Decision
-
-Expenses store intent
-
-Percentages or exact values as entered by users
-
-Balances store computed amounts
-
-Actual money owed between users
-
-This separation keeps the system flexible and correct.
-
-
-Balance Simplification Logic
+## Balance Simplification Logic
 
 When an expense is added:
 
@@ -127,13 +95,23 @@ No circular debts
 
 Clean and readable balances
 
+## Settlement Logic
 
-API Base URL
+Users can settle dues partially or fully
+
+Partial settlement reduces the balance
+
+Full settlement removes the balance record
+
+Over-settlement is prevented
+
+
+## API Base URL
 http://localhost:8000/expense-sharing/api/v1
 
-API Endpoints
+## API Endpoints
 
-Users
+### Users
 Create User
 POST /users
 
@@ -154,7 +132,7 @@ POST /users
 }
 
 
-Groups
+### Groups
 Create Group
 POST /groups
 
@@ -169,7 +147,7 @@ GET /groups/:groupId
 
 
 
-Expenses
+### Expenses
 Add Expense
 POST /expenses
 
@@ -217,7 +195,7 @@ Percentage Split
 
 
 
-Balances
+### Balances
 Get Balances for Group
 GET /balances/:groupId
 
@@ -237,7 +215,7 @@ Example response:
 ]
 
 
-Settle Dues
+### Settle Dues
 Settle Balance
 POST /settle
 
@@ -254,13 +232,13 @@ Partial settlement → reduces balance
 Full settlement → removes balance entry
 
 
-How to Run Locally
+## How to Run Locally
 git clone <repo-url>
 cd Expense_Sharing_BS
 npm install
 npm run dev
 
-Ensure MongoDB is running and .env contains:
+**Ensure MongoDB is running and .env contains:**
 
 PORT=8000
 MONGO_URI=your_mongodb_connection_string
