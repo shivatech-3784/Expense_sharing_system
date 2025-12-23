@@ -248,6 +248,7 @@ NODE_ENV=development
 ## Sample API Flow (Postman)
 
 ![Add Expense](percentage_expenses.png)
+![Balance](balancebefore.png)
 ![Partial Payment](partial_settlement.png)
 ![Fetch Balances](balance_after_pay.png)
 
