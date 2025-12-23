@@ -1,4 +1,4 @@
-Expense Sharing Application (Splitwise-like Backend)
+###Expense Sharing Application (Splitwise-like Backend)
 
 Overview
 
