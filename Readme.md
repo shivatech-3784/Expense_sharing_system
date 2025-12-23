@@ -244,3 +244,10 @@ PORT=8000
 MONGO_URI=your_mongodb_connection_string
 NODE_ENV=development
 
+
+## Sample API Flow (Postman)
+
+![Add Expense](screenshots/add-expense.png)
+![Fetch Balances](screenshots/fetch-balances.png)
+
+
