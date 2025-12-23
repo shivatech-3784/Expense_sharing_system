@@ -1,6 +1,6 @@
-###Expense Sharing Application (Splitwise-like Backend)
+##Expense Sharing Application (Splitwise-like Backend)
 
-Overview
+##Overview
 
 This project is a backend system for an expense sharing application similar to Splitwise.
 It allows users to create groups, add shared expenses with multiple split strategies, track balances, and settle dues.
@@ -8,7 +8,7 @@ It allows users to create groups, add shared expenses with multiple split strate
 The focus of this project is business logic, data modeling, and balance simplification, not authentication or frontend UI.
 
 
-Features Implemented
+##Features Implemented
 
 Create users (minimal, no authentication)
 
